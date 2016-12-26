@@ -58,7 +58,7 @@ public class AudioRecorder
     {
         @Override
         public void onPeriodicNotification(AudioRecord recorder) {
-            this.recorder.read(buffer, buffer.capacity());
+            recorder.read(buffer, buffer.capacity());
             try {
                 buffer.rewind();
                 fileChannel.write(buffer);
@@ -89,9 +89,9 @@ public class AudioRecorder
                 channels = 2;
             }
 
-            audioSource = audioSource;
-            sampleRate   = sampleRate;
-            audioFormat = audioFormat;
+            this.audioSource = audioSource;
+            this.sampleRate   = sampleRate;
+            this.audioFormat = audioFormat;
 
             framePeriod = sampleRate * TIMER_INTERVAL / 1000;
             bufferSize = framePeriod * 2 * bitsPerSample * channels / 8;
