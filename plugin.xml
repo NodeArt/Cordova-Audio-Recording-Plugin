@@ -35,5 +35,6 @@
         <source-file src="src/android/com/nodeart/raixur/recorder/AudioRecorder.java"
             target-dir="src/com/nodeart/raixur/recorder" />
     </platform>
-
+    <!-- todo: set hook src -->
+    <hook></hook>
 </plugin>
